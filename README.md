@@ -8,8 +8,8 @@ forward pass runs entirely inside the EVM. Query it by sending a transaction.
 one 30M-gas block (see [Gas economics](#gas-economics)).
 
 **Status:** working demo. It generates text on a local Anvil node and is covered
-by Foundry tests. It has not been deployed to a public network, and the model
-is too small to produce useful text.
+by Foundry tests. No public deployment is documented here, and the model is
+too small to produce useful text.
 
 ## Contract design
 
