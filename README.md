@@ -3,7 +3,15 @@
 A tiny language model whose weights live in Solidity bytecode and whose
 forward pass runs entirely inside the EVM. Query it by sending a transaction.
 
-## What's actually in the contract
+**Key result:** about 3,800 parameters, 17.5KB of contract bytecode (under the
+24KB limit), and about 6.9M gas per generated token, so roughly 4 tokens fit in
+one 30M-gas block (see [Gas economics](#gas-economics)).
+
+**Status:** working demo. It generates text on a local Anvil node and is covered
+by Foundry tests. No public deployment is documented here, and the model is
+too small to produce useful text.
+
+## Contract design
 
 `OnChainLLM.sol` implements a miniature Llama-style transformer:
 token + position embedding → RMSNorm → single-head causal self-attention →
